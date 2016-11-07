@@ -65,8 +65,13 @@
       newmessage.focus();
     },
     'onmessage': function(m) {
+      var roll = Math.floor((Math.random() * 6) + 1);
+      var msg = m.data;
+      msg = msg.replace('/struggie', '¯\\_(ツ)_/¯');
+      msg = msg.replace('/wow', '<img src = "http://www.clipartkid.com/images/24/smiley-with-wow-sign-royalty-free-stock-photo-image-37519175-c4cFxr-clipart.jpg"  style="width:100px; height:100px;"');
+      msg = msg.replace('/roll', roll);
       // Blindly append the message to the end of the element.
-      messages.append('<p class="message">' + m.data + '</p>');
+      messages.append( '<p class="message">' + msg + '</p>');
     },
     'onerror': function() {}, // No-op.
     'onclose': function() {}, // No-op.
